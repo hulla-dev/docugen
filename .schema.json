@@ -1,0 +1,34 @@
+{
+  "$schema": "https:/raw.githubusercontent.com/samuelhulla/docugen/.schema.json",
+  "type": "object",
+  "properties": {
+    "includes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "excludes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "outDir": {
+      "type": "string"
+    },
+    "format": {
+      "type": "string"
+    },
+    "mode": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "includes",
+    "excludes",
+    "outDir",
+    "format",
+    "mode"
+  ]
+}
