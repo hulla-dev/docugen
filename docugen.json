@@ -1,0 +1,6 @@
+{
+  "$schema": "https://raw.githubusercontent.com/hulla-dev/docugen/master/.schema.json",
+  "includes": ["."],
+  "excludes": ["./node_modules", "./example", "./dist"],
+  "outDir": "./example/src/content/docs/reference"
+}
