@@ -1,4 +1,4 @@
-import { keys } from '~util/objects'
+import { keys } from "~util/objects"
 
 type TupleVariations<T extends readonly unknown[]> = T extends []
   ? []
