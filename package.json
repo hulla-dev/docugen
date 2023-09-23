@@ -1,0 +1,18 @@
+{
+  "name": "docugen",
+  "module": "index.ts",
+  "devDependencies": {
+    "@biomejs/biome": "1.2.2",
+    "bun-types": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "type": "module",
+  "dependencies": {
+    "nanostores": "^0.9.3"
+  },
+  "volta": {
+    "node": "18.18.0"
+  }
+}
