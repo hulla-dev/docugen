@@ -1,5 +1,6 @@
 {
   "name": "docugen",
+  "version": "0.0.0",
   "module": "index.ts",
   "devDependencies": {
     "@biomejs/biome": "1.2.2",
