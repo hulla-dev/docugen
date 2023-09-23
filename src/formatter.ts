@@ -57,7 +57,7 @@ function handleTags(tags: string[]) {
         })
         break
       case "@returns":
-        md += `\n### Returns 📤\n> ${lines.join("\n")}\n`
+        md += `\n### Returns 📤\n> ${lines.join("\n").replace('{', '`').replace('}', '`')}\n`
         break
       case "@example":
         md += `\n### Example 📝\n${lines.join("\n")}\n`
