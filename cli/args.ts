@@ -1,4 +1,4 @@
-import { keys } from '~util/objects'
+import { keys } from "~util/objects"
 import { type Config, keepConfigProperties } from "./config"
 
 /**
@@ -161,7 +161,7 @@ export async function parseArgs(args: string[], updateConfig: (newConfig: Partia
         const [keyword, value] = arg.split("=")
         if (keyword === "-m" || keyword === "--meta") {
           // We allow --meta / -m to act as shorthand for --meta=true / -m=true
-          updateConfig({ meta: value === "true" || value === undefined  })
+          updateConfig({ meta: value === "true" || value === undefined })
         } else {
           console.error(`[docugen]: ERROR - Invalid argument "${arg}"`)
           throw new Error(`[docugen]: Invalid argument "${arg}"`)
