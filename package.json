@@ -2,9 +2,17 @@
   "name": "docugen",
   "version": "0.0.0",
   "module": "index.ts",
+  "scripts": {
+    "lint": "bun run biome check .",
+    "format": "bun run biome format . && bun run lint --apply",
+    "build": "bun build ./index.ts --outdir ./dist --target bun --minify --splitting",
+    "build:run": "bun run ./dist/index.js --config ./docugen.json",
+    "prepare": "husky install"
+  },
   "devDependencies": {
     "@biomejs/biome": "1.2.2",
-    "bun-types": "latest"
+    "bun-types": "latest",
+    "husky": "^8.0.0"
   },
   "peerDependencies": {
     "typescript": "^5.0.0"
