@@ -1,7 +1,9 @@
 {
-  "$schema": "https://raw.githubusercontent.com/hulla-dev/docugen/master/.schema.json",
   "type": "object",
   "properties": {
+    "outDir": {
+      "type": "string"
+    },
     "includes": {
       "type": "array",
       "items": {
@@ -14,21 +16,24 @@
         "type": "string"
       }
     },
-    "outDir": {
-      "type": "string"
+    "adapter": {
+      "type": "string",
+      "enum": ["default", "starlight"]
     },
     "format": {
-      "type": "string"
+      "type": "string",
+      "enum": [".md"]
     },
-    "mode": {
-      "type": "string"
+    "files": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [".js", ".jsx", ".ts", ".tsx"]
+      }
+    },
+    "meta": {
+      "type": "boolean"
     }
   },
-  "required": [
-    "includes",
-    "excludes",
-    "outDir",
-    "format",
-    "mode"
-  ]
+  "required": []
 }
