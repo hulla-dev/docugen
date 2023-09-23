@@ -1,8 +1,8 @@
-import fs from 'fs';
-import path from 'path'
-import { Documents } from './formatter';
-import { DocsData } from './parser';
-import { entries } from '~util/objects';
+import fs from "fs"
+import path from "path"
+import { entries } from "~util/objects"
+import { Documents } from "./formatter"
+import { DocsData } from "./parser"
 
 /**
  * Recursively lists all files in the specified directories with the specified file extensions,
@@ -13,52 +13,53 @@ import { entries } from '~util/objects';
  * @param excludes - An array of subdirectory paths to ignore. Trailing slashes are optional.
  * @returns An array of file paths that match the specified criteria. */
 export function listFiles(includes: string[], files: string[], excludes: string[] = []): string[] {
-  const result: string[] = [];
-  const subdirs = includes.map((dir) => dir.endsWith('/') ? dir.slice(0, -1) : dir);
+  const result: string[] = []
+  const subdirs = includes.map((dir) => (dir.endsWith("/") ? dir.slice(0, -1) : dir))
 
   for (const subdir of subdirs) {
     if (excludes.includes(subdir)) {
-      continue;
+      continue
     }
 
-    const dirents = fs.readdirSync(subdir, { withFileTypes: true });
+    const dirents = fs.readdirSync(subdir, { withFileTypes: true })
     // Lists all files in the specified directory
     for (const dirent of dirents) {
-      const path = `${subdir}/${dirent.name}`;
+      const path = `${subdir}/${dirent.name}`
       // Handles subdirectories
       if (dirent.isDirectory()) {
-        const subfiles = listFiles([path], files, excludes);
-        result.push(...subfiles);
+        const subfiles = listFiles([path], files, excludes)
+        result.push(...subfiles)
       } else if (dirent.isFile()) {
-        const ext = dirent.name.substring(dirent.name.lastIndexOf('.'));
+        const ext = dirent.name.substring(dirent.name.lastIndexOf("."))
         if (files.includes(ext)) {
-          result.push(path);
+          result.push(path)
         }
       }
     }
   }
 
-  return result;
+  return result
 }
 
 export function getFileName(path: string): string {
-  return path.substring(path.lastIndexOf('/') + 1).split(".")[0];
+  return path.substring(path.lastIndexOf("/") + 1).split(".")[0]
 }
 
 function pathWithoutFile(path: string) {
-  return path.substring(0, path.lastIndexOf('/'));
+  return path.substring(0, path.lastIndexOf("/"))
 }
 
-
 export async function createDocs(mdFiles: Documents<DocsData>, outDir: string) {
-  return Promise.all(entries(mdFiles).map(async ([filePath, content]) => {
-    const fileName = getFileName(filePath as string);
-    const dirPath = pathWithoutFile(filePath as string);
-    const destination = path.join(outDir, dirPath, `${fileName}.md`);
-    if (!fs.existsSync(destination)) {
-      fs.mkdirSync(path.join(outDir, dirPath), { recursive: true });
-      fs.writeFileSync(destination, "");
-    }
-    return Bun.write(destination, content);
-  }));
+  return Promise.all(
+    entries(mdFiles).map(async ([filePath, content]) => {
+      const fileName = getFileName(filePath as string)
+      const dirPath = pathWithoutFile(filePath as string)
+      const destination = path.join(outDir, dirPath, `${fileName}.md`)
+      if (!fs.existsSync(destination)) {
+        fs.mkdirSync(path.join(outDir, dirPath), { recursive: true })
+        fs.writeFileSync(destination, "")
+      }
+      return Bun.write(destination, content)
+    }),
+  )
 }
