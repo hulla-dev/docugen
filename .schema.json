@@ -1,5 +1,5 @@
 {
-  "$schema": "https:/raw.githubusercontent.com/samuelhulla/docugen/.schema.json",
+  "$schema": "https://raw.githubusercontent.com/hulla-dev/docugen/master/.schema.json",
   "type": "object",
   "properties": {
     "includes": {
