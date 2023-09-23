@@ -1,4 +1,3 @@
-
 export function terminateOn(str: string, chars: string[]) {
   const stopword = detectFirstOccurrenceIn(str.trim(), chars)
   if (stopword) {
@@ -6,7 +5,6 @@ export function terminateOn(str: string, chars: string[]) {
   }
   return str.trim()
 }
-
 
 /**
  * Returns the first occurance of substrings in a string
@@ -20,16 +18,16 @@ export function terminateOn(str: string, chars: string[]) {
  * ```
  *  */
 function detectFirstOccurrenceIn(str: string, items: string[]): string | null {
-  let minIndex = Infinity;
-  let result: string | null = null;
+  let minIndex = Infinity
+  let result: string | null = null
   for (const item of items) {
-    const index = str.indexOf(item);
+    const index = str.indexOf(item)
     if (index !== -1 && index < minIndex) {
-      minIndex = index;
-      result = item;
+      minIndex = index
+      result = item
     }
   }
-  return result;
+  return result
 }
 
 /**
@@ -50,18 +48,18 @@ export function firstOccurance(str: string, substrings: string[]) {
     }
   }
   console.warn(`[docugen]: Unable to find any TAG matching declarations in line: ${str}`)
-  return ''
+  return ""
 }
 
 export function replaceAll(str: string, replacements: string[]): string {
-  let result = str;
+  let result = str
   for (const replacement of replacements) {
-    result = result.replace(replacement, '')
+    result = result.replace(replacement, "")
   }
-  return result;
+  return result
 }
 
 export const removeFirstOccurrence = (str: string, substrings: string[]) => {
   const substring = firstOccurance(str, substrings)
-  return str.replace(substring, '')
+  return str.replace(substring, "")
 }
