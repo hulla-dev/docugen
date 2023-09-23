@@ -1,15 +1,29 @@
-# docugen
+# docugen 📚
+An opinionated turbo-fast documentation generator ⚡️
 
-To install dependencies:
+## Motivation 🏃
+Why docugen was created can be summarized in few short bullet points
+- available documentation tools take too long to compile
+- they use outdated module principles which can be trouble-some for modern apps
+- the output format sucks
+- you need to study in-depth a documentation of a documentation tool to even get remotely close to desired result
+
+`docugen` aims to address all of these painpoints.
+
+- built on top of bun (zig) APIs, it's blazing fast 🔥
+- scans through file-system for modules, without need for any TS/JS compilation 🧠
+- built-in astro starlight integration for awesome format, with search and navigation included 🎨
+- works with 0 config with sensible defaults, but still fully customizable with `cli commands` and `docugen.json` configuration! 👽
+
+## Installation & Usage ℹ️
+You can use docugen as a one of script:
 
 ```bash
-bun install
+bunx docugen
 ```
 
-To run:
-
+or install it as a `devDependency`
 ```bash
-bun run index.ts
+bun add -D docugen
+bun run docugen
 ```
-
-This project was created using `bun init` in bun v1.0.0. [Bun](https://bun.sh) is a fast all-in-one JavaScript runtime.
