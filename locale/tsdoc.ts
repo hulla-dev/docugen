@@ -1,4 +1,4 @@
-type Category = 1 | 2 | 3 | 4 | 'special' | 'unsupported'
+type Category = 1 | 2 | 3 | 4 | "special" | "unsupported"
 
 export type Tag = {
   category: Category
@@ -10,34 +10,33 @@ export const TAGS = {
   "@beta": { category: 1 },
   "@decorator": { category: 2 },
   "@deprecated": { category: 1 },
-  "@defaultValue": { category: 4},
+  "@defaultValue": { category: 4 },
   "@eventProperty": { category: 2 },
   "@example": { category: 4 },
   "@experimental": { category: 1 },
-  "@inheritDoc": { category: 'unsupported' },
-  "@internal": { category: 2},
-  "@label": { category: 'special' },
-  "@link": { category: 3},
+  "@inheritDoc": { category: "unsupported" },
+  "@internal": { category: 2 },
+  "@label": { category: "special" },
+  "@link": { category: 3 },
   "@override": { category: 2 },
-  "@packageDocumentation": { category: 'unsupported' },
-  "@param": { category: 3},
-  "@privateRemarks": { category: 'special' },
+  "@packageDocumentation": { category: "unsupported" },
+  "@param": { category: 3 },
+  "@privateRemarks": { category: "special" },
   "@public": { category: 2 },
-  "@readonly": { category: 2},
+  "@readonly": { category: 2 },
   "@remarks": { category: 4 },
   "@returns": { category: 3 },
-  "@sealed": { category: 2},
+  "@sealed": { category: 2 },
   "@see": { category: 3 },
-  "@throws": { category: 3},
+  "@throws": { category: 3 },
   "@typeParam": { category: 3 },
-  "@virtual": { category: 2},
+  "@virtual": { category: 2 },
   "@warning": { category: 1 },
- } satisfies {[key: string]: Tag}
+} satisfies { [key: string]: Tag }
 
 export const DOC_START = "/**"
 export const DOC_END = "*/"
 export const DOC_LINE = "*"
-
 
 export const KEYWORDS = [
   "function",
@@ -59,7 +58,7 @@ export const KEYWORDS = [
 ]
 
 export const STOP_WORDS = [
-  " ", 
+  " ",
   ":",
   "=",
   "(",
@@ -73,11 +72,7 @@ export const STOP_WORDS = [
   // "\t",
 ]
 
-export const FLAVOR_TEXT = [
-  "export",
-  "import",
-  "declare",
-]
+export const FLAVOR_TEXT = ["export", "import", "declare"]
 
 // export const KEYWORDS = {
 //   "function": { search: "start-end", start: ["{"], end: ["}"]},
