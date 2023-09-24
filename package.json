@@ -18,17 +18,20 @@
     "doc gen",
     "doc generator"
   ],
-  "repository": "github:hulla-dev/docugen",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hulla-dev/docugen.git"
+  },
   "module": "index.ts",
   "bin": {
-    "docugen": "./dist/index.js"
+    "docugen": "dist/index.js"
   },
   "scripts": {
     "lint": "bun run biome check .",
     "format": "bun run biome format . && bun run lint --apply",
     "build": "bun build ./index.ts --outdir ./dist --target bun --minify --splitting",
     "build:run": "bun run ./dist/index.js --config ./docugen.json",
-    "release":"bun run build && bun run changeset version && bun run changeset publish",
+    "release": "bun run build && bun run changeset version && bun run changeset publish",
     "prepare": "husky install"
   },
   "devDependencies": {
