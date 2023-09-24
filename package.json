@@ -28,10 +28,12 @@
     "format": "bun run biome format . && bun run lint --apply",
     "build": "bun build ./index.ts --outdir ./dist --target bun --minify --splitting",
     "build:run": "bun run ./dist/index.js --config ./docugen.json",
+    "release":"bun run build && bun run changeset version && bun run changeset publish",
     "prepare": "husky install"
   },
   "devDependencies": {
     "@biomejs/biome": "1.2.2",
+    "@changesets/cli": "^2.26.2",
     "bun-types": "latest",
     "husky": "^8.0.0"
   },
