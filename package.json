@@ -27,7 +27,7 @@
   },
   "module": "index.ts",
   "bin": {
-    "docugen": "dist/index.js"
+    "docugen": "./dist/index.js"
   },
   "files": ["./dist/index.js"],
   "scripts": {
