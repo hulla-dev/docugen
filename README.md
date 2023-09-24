@@ -16,7 +16,7 @@ Why docugen was created can be summarized in few short bullet points
 - works with 0 config with sensible defaults, but still fully customizable with `cli commands` and `docugen.json` configuration! 👽
 
 ## Installation & Usage ℹ️
-You can use docugen as a one of script:
+You can use docugen as a one off script:
 
 ```bash
 bunx docugen
