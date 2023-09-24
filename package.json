@@ -1,7 +1,28 @@
 {
   "name": "docugen",
   "version": "0.0.0",
+  "author": "Samuel Hulla <hulla@hulla.dev> (https://hulla.dev)",
+  "license": "MIT",
+  "description": "Opionated blazing-fast documentation generator",
+  "keywords": [
+    "docugen",
+    "documentation",
+    "generator",
+    "typescript",
+    "tsdoc",
+    "typedoc",
+    "bun",
+    "bun documentation",
+    "zig documentation",
+    "documentation generator",
+    "doc gen",
+    "doc generator"
+  ],
+  "repository": "github:hulla-dev/docugen",
   "module": "index.ts",
+  "bin": {
+    "docugen": "./dist/index.js"
+  },
   "scripts": {
     "lint": "bun run biome check .",
     "format": "bun run biome format . && bun run lint --apply",
